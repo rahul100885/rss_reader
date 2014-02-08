@@ -1,4 +1,7 @@
 RssReader::Application.routes.draw do
+  resources :rss_feeds
+
+  root 'rss_feeds#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

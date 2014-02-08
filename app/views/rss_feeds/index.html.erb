@@ -1,0 +1,19 @@
+
+  <aside class="large-3 columns">
+
+    <h5>Feeds</h5>
+    <ul class="side-nav">
+      <% @rss_feeds.each do |rss_feed| %>
+        <li><%= rss_feed.title %></li>
+      <% end %> 
+    </ul>
+    <div class="panel">
+      <%= link_to 'New Rss feed', new_rss_feed_path %>
+    </div>
+
+  </aside>
+
+  <div class="large-9 columns" role="content">
+
+  </div>
+

@@ -47,6 +47,10 @@ gem 'unicorn'
 # For easy forms
 gem 'simple_form'
 
+# feed parse
+gem 'feedzirra'
+
 group :development, :test do
   gem 'rspec-rails'
+  gem 'awesome_print'
 end
