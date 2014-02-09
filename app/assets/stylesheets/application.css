@@ -10,6 +10,12 @@
  *
  *= require_self
  *= require 'foundation'
- *= require 'normalize'
+ *= require 'foundation-icons'
  *= require_tree .
  */
+
+hr .entry {
+  margin-top: 1rem;
+  margin-right: 0px;
+  margin-bottom: 1rem;
+}

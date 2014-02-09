@@ -50,7 +50,21 @@ gem 'simple_form'
 # feed parse
 gem 'feedzirra'
 
+# Jquery validate
+gem 'jquery-validation-rails'
+
+# Truncate html
+gem 'truncate_html'
+
+# Time ago
+gem 'rails-timeago'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'awesome_print'
+  gem 'capybara'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'shoulda-matchers'
+  gem 'pry'
 end

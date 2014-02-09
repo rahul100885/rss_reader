@@ -14,4 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation.min
+//= require jquery.foundation.reveal
+//= require jquery.foundation.buttons
+//= require jquery.validate
+//= require jquery.validate.additional-methods
+//= require rails-timeago
 //= require_tree .
+
+$(document).foundation();

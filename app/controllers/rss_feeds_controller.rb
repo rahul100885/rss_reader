@@ -4,7 +4,8 @@ class RssFeedsController < ApplicationController
   # GET /rss_feeds
   # GET /rss_feeds.json
   def index
-    @rss_feeds = RssFeed.all
+    @rss_feeds = RssFeed.all  
+    @entries = RssFeedParser.new().fetch_entries(@rss_feeds.collect(&:feed_url))
   end
 
   # GET /rss_feeds/1
