@@ -6,7 +6,11 @@ class RssFeedParser
   # fetch entries from given feeds
   def fetch_entries(feed_urls, sort_order = "DESC")
     feeds = Feedzirra::Feed.fetch_and_parse(feed_urls)
-    # Not doing feed validation here. Assuming all feeds will return entries
+    # Removing all feeds which are not working (It might happens 
+    # while fetching entries from feed, feed server might be down 
+    # or andy other reason)
+    feeds.reject!{|key, value| value.class.parent != Feedzirra::Parser }
+
     entries = feeds.values.collect(&:entries)
     entries.flatten!
     sort(entries, sort_order)
