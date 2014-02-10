@@ -1,20 +1,9 @@
-<aside class="large-3 columns">
-  <div class="panel">
-    <div class="row">
-      <div class="large-9 columns">
-        <h5>Feeds</h5> 
-      </div>
-      <div class="large-3 columns"> 
-        <%= link_to '+', "#", data: {"reveal-id" => "addFeedModel", "reveal-ajax" => new_rss_feed_url}, class: "right"%>
-      </div>
-      <hr />
+<div id="feeds">
+  <% feeds.each do |feed| %>
+    <div class="row" style="margin-bottom: 3px;">
+      <%= link_to feed.title, feed, remote: true, class: "feed-title", id: "feed-#{feed.id}" %>
+      <%= link_to content_tag(:i, "", class: "fi-pencil"), edit_rss_feed_path(feed) %>
+      <%= link_to content_tag(:i, "", class: "fi-trash right"), feed, confirm: 'Are you sure?', method: :delete %>
     </div>
-    <% feeds.each do |feed| %>
-      <div class="row" style="margin-bottom: 3px;">
-        <%= link_to feed.title, feed %>
-        <%= link_to content_tag(:i, "", class: "fi-pencil"), edit_rss_feed_path(feed) %>
-        <%= link_to content_tag(:i, "", class: "fi-trash right"), feed, confirm: 'Are you sure?', method: :delete %>
-      </div>
-    <% end %>
-  </div>
-</aside>
+  <% end %>
+</div>

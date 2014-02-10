@@ -11,6 +11,7 @@ class RssFeedsController < ApplicationController
   # GET /rss_feeds/1
   # GET /rss_feeds/1.json
   def show
+    @entries = RssFeedParser.new().fetch_entries([@rss_feed.feed_url])
   end
 
   # GET /rss_feeds/new

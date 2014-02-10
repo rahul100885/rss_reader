@@ -1,2 +1,15 @@
-<%= render partial: "feeds", locals: {feeds: @rss_feeds}%>
+<aside class="large-3 columns">
+  <div class="panel">
+    <div class="row">
+      <div class="large-9 columns">
+        <h5>Feeds</h5> 
+      </div>
+      <div class="large-3 columns"> 
+        <%= link_to '+', "#", data: {"reveal-id" => "addFeedModel", "reveal-ajax" => new_rss_feed_url}, class: "reveal right"%>
+      </div>
+      <hr />
+    </div>
+    <%= render partial: "feeds", locals: {feeds: @rss_feeds}%>
+  </div>
+</aside>
 <%= render partial: "entries", locals: {entries: @entries}%>

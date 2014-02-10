@@ -1,0 +1,3 @@
+$("#entries").html("<%=j render partial: 'entries', locals: {entries: @entries}%>")
+$(".feed-title").css('font-weight', 'normal');
+$("#feed-<%= @rss_feed.id %>").css('font-weight', 'bold');
