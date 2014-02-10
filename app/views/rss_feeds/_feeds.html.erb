@@ -1,7 +1,7 @@
 <div id="feeds">
   <% feeds.each do |feed| %>
     <div class="row" style="margin-bottom: 3px;">
-      <%= link_to feed.title, feed, remote: true, class: "feed-title", id: "feed-#{feed.id}" %>
+      <%= link_to truncate(feed.title, length:22, omission: '..'), feed, remote: true, class: "feed-title", id: "feed-#{feed.id}" %>
       <%= link_to content_tag(:i, "", class: "fi-pencil"), edit_rss_feed_path(feed) %>
       <%= link_to content_tag(:i, "", class: "fi-trash right"), feed, confirm: 'Are you sure?', method: :delete %>
     </div>

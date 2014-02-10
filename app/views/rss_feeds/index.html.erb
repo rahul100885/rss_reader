@@ -12,4 +12,7 @@
     <%= render partial: "feeds", locals: {feeds: @rss_feeds}%>
   </div>
 </aside>
-<%= render partial: "entries", locals: {entries: @entries}%>
+
+<div class="large-9 columns" role="content" id="entries">
+  <%= render partial: "entries", locals: {entries: @entries}%>
+</div>

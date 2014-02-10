@@ -1,20 +1,20 @@
-<div class="large-9 columns" role="content" id="entries">
-    <% entries.each do |entry| %>
-      <div class="row">
-        <div class="large-9 columns">
-          <%= link_to truncate(entry.title, length:70, omission: '...'), entry.url, target: "_blank" %>
-        </div>
-        <div class="large-3 columns">
-          <%= timeago_tag entry.published, force: true, class: "right" %>
-        </div>
+<div id="entries">
+  <% entries.each do |entry| %>
+    <div class="row">
+      <div class="large-9 columns">
+        <%= link_to truncate(entry.title, length:70, omission: '...'), entry.url, target: "_blank" %>
       </div>
-        <hr style="margin-top: 0.50rem; margin-bottom: 0.50rem;"/>
-      <!--
-      <div class="row">
-        <div class="large-12 columns">
-          <small><%= truncate_html(entry.summary, length: 100, omission: '...') %></small>
-        </div>
+      <div class="large-3 columns">
+        <%= timeago_tag entry.published, force: true, class: "right" %>
       </div>
-      -->
-    <% end %> 
+    </div>
+      <hr style="margin-top: 0.50rem; margin-bottom: 0.50rem;"/>
+    <!--
+    <div class="row">
+      <div class="large-12 columns">
+        <small><%= truncate_html(entry.summary, length: 100, omission: '...') %></small>
+      </div>
+    </div>
+    -->
+  <% end %> 
 </div>
